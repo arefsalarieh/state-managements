@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteUser } from "../../stores/redux/slices/user";
+import { deleteUser } from "../../../stores/redux/slices/user";
 import CardModal from "../cardModal/cardModal";
 import { useState } from "react";
 import UserCard from "../userCard/userCard";

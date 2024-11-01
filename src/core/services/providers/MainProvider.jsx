@@ -1,14 +1,18 @@
-import { StrictMode } from "react";
+import { StrictMode, useState } from "react";
 import { Provider } from "react-redux";
 import store from "../../../stores/redux/store";
 import contextStore from "../../../stores/context/contextData";
+import App from "../../../App";
 
-const MainProvider = ({ children }) => {
+const MainProvider = () => {
+  const [TechList, setTechList] = useState([
+    {id:1 , name:'react' , desc:'a good mini framework'}
+  ]);
   return (
     <StrictMode>
-      <contextStore.Provider value=''>
+      <contextStore.Provider value={{TechList , setTechList}}>
         <Provider store={store}>
-          {children}
+          <App/>
         </Provider>
       </contextStore.Provider>
     </StrictMode>

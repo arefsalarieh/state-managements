@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateUser } from "../../stores/redux/slices/user";
+import { updateUser } from "../../../stores/redux/slices/user";
 import CustomForm from "../customForm/customForm";
 
 const CardModal = ({ id , setOpen }) => {

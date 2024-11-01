@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../../stores/redux/slices/user";
+import { addUser } from "../../../stores/redux/slices/user";
 import CustomForm from "../customForm/customForm";
 
 
-const AddValue = () => {
+const AddReduxValue = () => {
   const store = useSelector(state => state)
   const dispatch = useDispatch()
 
@@ -14,6 +14,7 @@ const AddValue = () => {
     dispatch(addUser({...values , id}))
     
   }
+
   return (
     <div className=" mx-auto  ">
       <div className=" mt-10 p-6">
@@ -24,7 +25,7 @@ const AddValue = () => {
     <CustomForm habdleSubmit={handleRedux}/>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AddValue;
+export default AddReduxValue
