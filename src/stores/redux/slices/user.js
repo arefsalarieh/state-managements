@@ -11,21 +11,24 @@ const userSlice = createSlice({
     },
   ],
   reducers: {
-
     addUser: (state, action) => {
       state.push(action.payload);
     },
 
     deleteUser: (state, action) => {
-        const newArr = state.filter((item) => {
-          return item.id !== action.payload;
-        });
-      
-        state.splice(0, state.length, ...newArr);
-      },
+      const newArr = state.filter((item) => {
+        return item.id !== action.payload;
+      });
+
+      state.splice(0, state.length, ...newArr);
+    },
+
+    updateUser: (state, action) => {
+      state.splice(0, state.length, ...action.payload);
+    },
   },
 });
 
-export const { addUser , deleteUser } = userSlice.actions;
+export const { addUser, deleteUser , updateUser} = userSlice.actions;
 
 export default userSlice.reducer;
