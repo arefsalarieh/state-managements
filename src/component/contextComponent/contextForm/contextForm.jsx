@@ -1,25 +1,17 @@
 import { Field, Form, Formik } from "formik";
-import contextStore from "../../../stores/context/contextData";
-import { useContext } from "react";
 
 
 
-const ContextForm = () => {
-    const {TechList, setTechList} = useContext(contextStore)
-    console.log(TechList);
 
+const ContextForm = ({func , name , desc}) => {
 
-    const addContext = (values) =>{
-        const newObj = {id:Math.random() , ...values}
-        setTechList([...TechList , newObj])
-    }
   return (
     <div>
     <div className="m-5 flex justify-around gap-5 border-2 w-[80%] py-10 bg-[aqua] mx-auto rounded-2xl mt-5">
       <Formik
-        initialValues={{ name: "", desc: "" }}
+        initialValues={{ name: name, desc: desc }}
         className="border-2 "
-        onSubmit={addContext}
+        onSubmit={func}
       >
         <Form className="flex flex-col gap-10">
           <h2 className="font-semibold text-lg  text-center">

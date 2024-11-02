@@ -1,12 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { deleteUser } from "../../../stores/redux/slices/user";
-import CardModal from "../cardModal/cardModal";
 import { useState } from "react";
 import UserCard from "../userCard/userCard";
+import UpdateRedux from "../updateRedux/updateRedux";
 
 const ReduxValue = () => {
   const [Open, setOpen] = useState(false);
-  const [CardId, setCardId] = useState(null);
   const store = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -26,7 +25,7 @@ const ReduxValue = () => {
           );
         })}
 
-        {Open !== false && <CardModal id={Open && Open} setOpen={setOpen} />}
+        {Open !== false && <UpdateRedux id={Open && Open} setOpen={setOpen} />}
       </div>
     </div>
   );

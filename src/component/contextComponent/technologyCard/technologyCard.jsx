@@ -1,6 +1,15 @@
-import React from "react";
+import contextStore from "../../../stores/context/contextData";
+import { useContext } from "react";
 
-const TechnologyCard = ({ item }) => {
+const TechnologyCard = ({ item , setOpen}) => {
+  const {TechList, setTechList} = useContext(contextStore)
+
+
+  const handleDelete = (id) =>{
+    const newArr = TechList.filter(item=>item.id !== id)
+    setTechList(newArr);
+  }
+
   return (
     <div className="shadow-2xl rounded-2xl pb-4 w-[30%] bg-gray-300">
       <div>
@@ -16,13 +25,9 @@ const TechnologyCard = ({ item }) => {
           <h2 className="font-bold text-lg ">{item.desc}</h2>
         </div>
 
-        <div className="my-3">
-          <h2 className="font-bold text-lg ">
-            {/* phoneNumber :<h2>{item.phoneNumber}</h2> */}
-          </h2>
-        </div>
 
-        {/* <div className="flex justify-around">
+
+        <div className="flex justify-around">
           <div
             className="badge badge-primary p-4 cursor-pointer "
             onClick={() => handleDelete(item.id)}
@@ -37,7 +42,7 @@ const TechnologyCard = ({ item }) => {
           >
             update
           </button>
-        </div> */}
+        </div>
       </div>
     </div>
   );

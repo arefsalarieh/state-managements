@@ -6,7 +6,8 @@ import App from "../../../App";
 
 const MainProvider = () => {
   const [TechList, setTechList] = useState([
-    {id:1 , name:'react' , desc:'a good mini framework'}
+    {id:1 , name:'react' , desc:'a good mini framework'},
+    {id:2 , name:'next' , desc:'a good framework'},
   ]);
   return (
     <StrictMode>

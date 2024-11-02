@@ -1,12 +1,12 @@
 import { Field, Form, Formik } from "formik";
 
 
-const CustomForm = ({habdleSubmit}) => {
+const CustomForm = ({habdleSubmit , name , email , phoneNumber}) => {
   return (
     <div>
       <div className="m-5 flex justify-around gap-5 border-2 w-[80%] py-10 bg-[aqua] mx-auto rounded-2xl mt-5">
         <Formik
-          initialValues={{ name: "", email: "", phoneNumber: "" }}
+          initialValues={{ name: name, email: email, phoneNumber: phoneNumber }}
           className="border-2 "
           onSubmit={habdleSubmit}
         >

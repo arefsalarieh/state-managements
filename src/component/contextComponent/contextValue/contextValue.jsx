@@ -1,9 +1,11 @@
 import contextStore from "../../../stores/context/contextData";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import TechnologyCard from "../technologyCard/technologyCard";
+import UpdateContext from "../updateContext/updateContext";
 
 
 const ContextValue = () => {
+  const [Open, setOpen] = useState(false);
     const context = useContext(contextStore)
 
 
@@ -19,11 +21,12 @@ const ContextValue = () => {
       <div className="flex p-5 gap-5 flex-wrap justify-between">
         {context.TechList.map((item, index) => {
           return (
-            <TechnologyCard item={item}/>
+            <TechnologyCard item={item} setOpen={setOpen}/>
           );
         })}
 
-        {/* {Open !== false && <CardModal id={Open && Open} setOpen={setOpen} />} */}
+        {/* {Open !== false && <TechnologyModal id={Open && Open} setOpen={setOpen} />} */}
+        {Open !== false && <UpdateContext id={Open && Open} setOpen={setOpen} />}
       </div>
     </div>
   );

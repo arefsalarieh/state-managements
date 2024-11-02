@@ -9,6 +9,12 @@ const userSlice = createSlice({
       email: "arefsalarieh@gmail.com",
       phoneNumber: "+989351390246",
     },
+    {
+      id: 2,
+      name: "salarieh aref ",
+      email: "salarieharef@gmail.com",
+      phoneNumber: "+989351390246",
+    },    
   ],
   reducers: {
     addUser: (state, action) => {
