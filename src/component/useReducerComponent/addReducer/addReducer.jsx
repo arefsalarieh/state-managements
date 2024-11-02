@@ -4,7 +4,8 @@ import ReducerForm from '../reducerForm/reducerForm'
 const AddReducer = ({ dispatch }) => {
 
   const handleAddReducer = (values) => {
-    dispatch({type:'create' , payload : values})
+    const obj = {id:Math.random() , ...values}
+    dispatch({type:'create' , payload : obj})
 
   }
 

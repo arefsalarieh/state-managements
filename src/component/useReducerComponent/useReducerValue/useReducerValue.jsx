@@ -1,6 +1,7 @@
 import { useReducer, useState } from "react";
 import AnimalCard from "../animalCard/animalCard";
 import AddReducer from '../addReducer/addReducer'
+import UpdateReducer from "../updateReducer/updateReducer";
 
 const initialState = [
   { id: 1, name: "dog", color: "black", cost: 1000000 },
@@ -16,12 +17,25 @@ const reducer = (state, action) => {
     case 'create':
       const createArr = [...state , action.payload]
       return createArr 
+
+     case 'update':
+      const updateArr = state.map(item=>{
+        if(item.id !== action.payload.id){
+          return item
+        }
+        else{
+          return action.payload
+        }
+      }) 
+      return updateArr
   }
 };
 
 const UseReducerValue = () => {
   const [Open, setOpen] = useState(false);
   const [List, dispatch] = useReducer(reducer, initialState);
+
+  console.log(List);
 
   return (
     <div className="bg-gray-100   mx-auto border">
@@ -32,7 +46,7 @@ const UseReducerValue = () => {
       <h2 className="font-semibold text-xl text-center">animal list</h2>
       <p className=" text-center">
         Usually, we do not define such a state in UseReducer, and this project
-        is only for practicing a more complex logic.
+        is only for practicing a more complex logic. 
       </p>
 
       <div className="flex p-5 gap-5 flex-wrap justify-between mt-5">
@@ -42,7 +56,7 @@ const UseReducerValue = () => {
           );
         })}
 
-        {/* {Open !== false && <UpdateContext id={Open && Open} setOpen={setOpen} />} */}
+        {Open !== false && <UpdateReducer id={Open && Open} setOpen={setOpen} dispatch={dispatch}/>}
       </div>
 
       <AddReducer  dispatch={dispatch} />
