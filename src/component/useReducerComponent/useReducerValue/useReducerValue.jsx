@@ -1,6 +1,6 @@
 import { useReducer, useState } from "react";
 import AnimalCard from "../animalCard/animalCard";
-import Addreducer from "../addReducer/addreducer";
+import AddReducer from '../addReducer/addReducer'
 
 const initialState = [
   { id: 1, name: "dog", color: "black", cost: 1000000 },
@@ -12,6 +12,10 @@ const reducer = (state, action) => {
     case "delete":
       const newArr = state.filter((item) => item.id !== action.payload);
       return newArr;
+
+    case 'create':
+      const createArr = [...state , action.payload]
+      return createArr 
   }
 };
 
@@ -41,7 +45,7 @@ const UseReducerValue = () => {
         {/* {Open !== false && <UpdateContext id={Open && Open} setOpen={setOpen} />} */}
       </div>
 
-      <Addreducer />
+      <AddReducer  dispatch={dispatch} />
     </div>
   );
 };
