@@ -16,16 +16,16 @@ const CustomForm = ({habdleSubmit , name , email , phoneNumber}) => {
             </h2>
 
             <div>
-              name : <Field type="text" name="name" placeholder="name" />
+              <Field  className='input input-bordered' type="text" name="name" placeholder="name" />
             </div>
 
             <div>
-              email : <Field type="text" name="email" placeholder="email" />
+               <Field  className='input input-bordered' type="text" name="email" placeholder="email" />
             </div>
 
             <div>
-              phone :{" "}
-              <Field type="text" name="phoneNumber" placeholder="phoneNumber" />
+              
+              <Field  className='input input-bordered' type="text" name="phoneNumber" placeholder="phoneNumber" />
             </div>
 
             <button type="submit" className="bg-blue-400 w-fit mx-auto p-2">

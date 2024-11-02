@@ -6,7 +6,7 @@ import ContextValue from '../../component/contextComponent/contextValue/contextV
 import UseReducerValue from '../../component/useReducerComponent/useReducerValue/useReducerValue'
 
 const MainPage = () => {
-    const [Count, setCount] = useState(3);
+    const [Count, setCount] = useState(1);
   return (
     <div className='  border-2 border-t min-h-[640px] bg-green-100'>
         <div className='flex min-h-[500px] w-10/12 mx-auto mt-10 rounded-3xl overflow-hidden shadow-2xl'>

@@ -9,17 +9,17 @@ const ContextForm = ({ func, name, desc }) => {
           className="border-2 "
           onSubmit={func}
         >
-          <Form className="flex flex-col gap-10">
+          <Form className="flex flex-col gap-10 ">
             <h2 className="font-semibold text-lg  text-center">
               Add a new technology
             </h2>
 
             <div>
-              name : <Field type="text" name="name" placeholder="name" />
+               <Field className='input input-bordered' type="text" name="name" placeholder="name" />
             </div>
 
             <div>
-              desc : <Field type="text" name="desc" placeholder="desc" />
+              <Field  className='input input-bordered' type="text" name="desc" placeholder="desc" />
             </div>
 
             <button type="submit" className="bg-blue-400 w-fit mx-auto p-2">
