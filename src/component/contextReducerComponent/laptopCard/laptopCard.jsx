@@ -20,6 +20,7 @@ const LaptopCard = ({ item, setOpen, dispatch }) => {
           <h2 className="font-bold text-lg ">cost :</h2>
           <h2 className="font-bold text-lg ">{item.cost}</h2>
         </div>
+        
 
         <div className="flex justify-around">
           <div

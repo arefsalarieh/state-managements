@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
 import contextStore from '../../../stores/context/contextData';
-import TechnologyCard from '../../contextComponent/technologyCard/technologyCard';
-import UpdateContext from '../../contextComponent/updateContext/updateContext';
 import LaptopCard from '../laptopCard/laptopCard';
+import UpdateContextReducer from '../updateContextReducer/updateContextReducer';
 
 
 const ContextReducerValue = () => {
@@ -24,8 +23,8 @@ const ContextReducerValue = () => {
         );
       })}
 
-      {/* {Open !== false && <TechnologyModal id={Open && Open} setOpen={setOpen} />} */}
-      {Open !== false && <UpdateContext id={Open && Open} setOpen={setOpen} />}
+
+      {Open !== false && <UpdateContextReducer id={Open && Open} setOpen={setOpen} />}
     </div>
   </div>
   )

@@ -5,8 +5,8 @@ import contextStore from "../../../stores/context/contextData";
 import App from "../../../App";
 
 const initialState = [
-  { id: 1, name: "apple", color: "black", cost: 1000000 },
-  { id: 2, name: "lenovo", color: "white", cost: 500000 },
+  { id: 1, name: "apple", cost: 1000000 },
+  { id: 2, name: "lenovo", cost: 500000 },
 ];
 
 const reducer = (state, action) => {
