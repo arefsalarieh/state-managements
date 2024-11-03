@@ -4,6 +4,7 @@ import ReduxValue from '../../component/reduxComponent/reduxValue/reduxValue'
 import Sidebar from '../../component/sideBar/Sidebar'
 import ContextValue from '../../component/contextComponent/contextValue/contextValue'
 import UseReducerValue from '../../component/useReducerComponent/useReducerValue/useReducerValue'
+import ContextReducerValue from '../../component/contextReducerComponent/contextReducerValue/contextReducerValue'
 
 const MainPage = () => {
     const [Count, setCount] = useState(1);
@@ -17,6 +18,7 @@ const MainPage = () => {
                 {Count === 1 && <ReduxValue/>}
                 {Count === 2 && <ContextValue/>}
                 {Count === 3 && <UseReducerValue/>}
+                {Count === 4 && <ContextReducerValue/>}                
             </div>
         </div> 
     </div>

@@ -35,7 +35,7 @@ const UseReducerValue = () => {
   const [Open, setOpen] = useState(false);
   const [List, dispatch] = useReducer(reducer, initialState);
 
-  console.log(List);
+
 
   return (
     <div className="bg-gray-100   mx-auto border">
