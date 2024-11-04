@@ -14,7 +14,7 @@ const UpdateContextReducer = ({ id, setOpen }) => {
   return (
     <div>
       <CustomModal setOpen={setOpen}>
-        <ContextReducerForm  func={handleUpdateContextReducer} name={laptopDetail.name} cost={laptopDetail.cost}/>
+        <ContextReducerForm  func={handleUpdateContextReducer}  text=' update laptop' name={laptopDetail.name} cost={laptopDetail.cost}/>
       </CustomModal>
     </div>
   )

@@ -16,7 +16,7 @@ const UpdateContext = ({ id, setOpen }) => {
   return (
     <div>
       <CustomModal setOpen={setOpen}>
-        <ContextForm func={handleUpdateContext} name={techDetail.name} desc={techDetail.desc} />
+        <ContextForm func={handleUpdateContext}  text='update technology' name={techDetail.name} desc={techDetail.desc} />
       </CustomModal>
     </div>
   );

@@ -1,6 +1,6 @@
 import { Field, Form, Formik } from "formik";
 
-const ContextForm = ({ func, name, desc }) => {
+const ContextForm = ({ func, name, desc , text }) => {
   return (
     <div>
       <div className="m-5 flex justify-around gap-5 border-2 w-[80%] py-10 bg-[aqua] mx-auto rounded-2xl mt-5">
@@ -11,7 +11,7 @@ const ContextForm = ({ func, name, desc }) => {
         >
           <Form className="flex flex-col gap-10 ">
             <h2 className="font-semibold text-lg  text-center">
-              Add a new technology
+              {text}
             </h2>
 
             <div>

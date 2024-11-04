@@ -1,10 +1,10 @@
 import { Field, Form, Formik } from 'formik'
 import React from 'react'
 
-const ReducerForm = ({func , name , color , cost}) => {
+const ReducerForm = ({func , name , color , cost , text}) => {
   return (
     <div className='bg-gray-500 p-4 m-2 mt-8'>
-      <h2 className='text-white mb-4'>Add new card</h2>
+      <h2 className='text-white mb-4'>{text}</h2>
       <Formik initialValues={{name:name , color:color , cost:cost}} onSubmit={func}>
         <Form className='flex gap-5'>
           <Field type='text' name='name'  className="input input-bordered   w-full" placeholder='name'/>

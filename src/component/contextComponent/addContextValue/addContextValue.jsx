@@ -19,7 +19,7 @@ const AddContextValue = () => {
           Add Context Value{" "}
         </h2>
 
-        <ContextForm func={handleContextAdd} />
+        <ContextForm func={handleContextAdd} text='Add a new technology' />
       </div>
     </div>
   );

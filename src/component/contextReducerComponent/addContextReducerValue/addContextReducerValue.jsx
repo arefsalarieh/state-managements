@@ -15,10 +15,10 @@ const AddContextReducerValue = () => {
     <div className=" mt-10 p-6">
       <h2 className="font-bold text-2xl mt-5 text-center">
         {" "}
-        Add Context Value{" "}
+        Add Context-Reducer Value{" "}
       </h2>
 
-      <ContextReducerForm  func={handleAddContextReducer}/>
+      <ContextReducerForm  func={handleAddContextReducer}  text=' Add a new laptop'/>
     </div>
   </div>
   )

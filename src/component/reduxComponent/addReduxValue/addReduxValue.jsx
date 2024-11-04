@@ -19,7 +19,7 @@ const AddReduxValue = () => {
           Add Redux Value
         </h2>
 
-        <CustomForm habdleSubmit={handleAddRedux} />
+        <CustomForm habdleSubmit={handleAddRedux} text='Add a new user' />
       </div>
     </div>
   );

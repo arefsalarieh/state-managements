@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik";
 
 
-const CustomForm = ({habdleSubmit , name , email , phoneNumber}) => {
+const CustomForm = ({habdleSubmit , name , email , phoneNumber , text}) => {
   return (
     <div>
       <div className="m-5 flex justify-around gap-5 border-2 w-[80%] py-10 bg-[#f3d46e] mx-auto rounded-2xl mt-5">
@@ -12,7 +12,7 @@ const CustomForm = ({habdleSubmit , name , email , phoneNumber}) => {
         >
           <Form className="flex flex-col gap-10">
             <h2 className="font-semibold text-lg  text-center">
-              Add a new user
+              {text}
             </h2>
 
             <div>

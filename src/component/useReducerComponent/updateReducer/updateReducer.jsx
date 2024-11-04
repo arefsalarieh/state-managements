@@ -18,6 +18,7 @@ const UpdateReducer = ({ id, setOpen, List, dispatch }) => {
           name={animal.name}
           color={animal.color}
           cost={animal.cost}
+           text='update animal'
         />
       </CustomModal>
     </div>

@@ -19,7 +19,7 @@ const UpdateRedux = ({id ,setOpen}) => {
   return (
     <div>
         <CustomModal setOpen={setOpen}>
-            <CustomForm habdleSubmit={handleAddRedux} name={user.name} email={user.email}  phoneNumber={user.phoneNumber} />
+            <CustomForm habdleSubmit={handleAddRedux}  text='update user' name={user.name} email={user.email}  phoneNumber={user.phoneNumber} />
 
         </CustomModal>
     </div>

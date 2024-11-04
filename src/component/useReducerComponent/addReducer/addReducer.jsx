@@ -11,7 +11,7 @@ const AddReducer = ({ dispatch }) => {
 
   return (
     <div>
-        <ReducerForm  func={handleAddReducer} />
+        <ReducerForm  func={handleAddReducer} text='Add new animal'/>
     </div>
   )
 }
