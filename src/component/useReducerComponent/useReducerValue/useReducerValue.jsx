@@ -2,38 +2,13 @@ import { useReducer, useState } from "react";
 import AnimalCard from "../animalCard/animalCard";
 import AddReducer from '../addReducer/addReducer'
 import UpdateReducer from "../updateReducer/updateReducer";
+import animallArr from "../../../data/useReducerData/animalArr";
+import reducerAnimal from "../../../functions/useReducerFuction/reducerAnimal";
 
-const initialState = [
-  { id: 1, name: "dog", color: "black", cost: 1000000 },
-  { id: 2, name: "cat", color: "white", cost: 500000 },
-];
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "delete":
-      const newArr = state.filter((item) => item.id !== action.payload);
-      return newArr;
-
-    case 'create':
-      const createArr = [...state , action.payload]
-      return createArr 
-
-     case 'update':
-      const updateArr = state.map(item=>{
-        if(item.id !== action.payload.id){
-          return item
-        }
-        else{
-          return action.payload
-        }
-      }) 
-      return updateArr
-  }
-};
 
 const UseReducerValue = () => {
   const [Open, setOpen] = useState(false);
-  const [List, dispatch] = useReducer(reducer, initialState);
+  const [List, dispatch] = useReducer(reducerAnimal, animallArr);
 
 
 
@@ -56,7 +31,7 @@ const UseReducerValue = () => {
           );
         })}
 
-        {Open !== false && <UpdateReducer id={Open && Open} setOpen={setOpen} dispatch={dispatch}/>}
+        {Open !== false && <UpdateReducer id={Open && Open} setOpen={setOpen} List={List} dispatch={dispatch}/>}
       </div>
 
       <AddReducer  dispatch={dispatch} />

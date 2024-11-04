@@ -1,23 +1,27 @@
-import React from 'react'
-import CustomModal from '../../customModal/customModal'
-import ReducerForm from '../reducerForm/reducerForm'
+import React from "react";
+import CustomModal from "../../customModal/customModal";
+import ReducerForm from "../reducerForm/reducerForm";
+import updateReducerFunc from "../../../functions/useReducerFuction/updateReducerFunc";
 
-const UpdateReducer = ({id , setOpen , dispatch}) => {
-    const handleUpdateReducer = (values) => {
-        values.id = id
-        console.log(values);
-        dispatch({type:'update' , payload : values})
-        setOpen(false)
+const UpdateReducer = ({ id, setOpen, List, dispatch }) => {
+  const animal = List.find((item) => item.id === id);
 
-    }
+  const handleUpdateReducer = (values) => {
+    updateReducerFunc(id, values, setOpen, dispatch);
+  };
+
   return (
     <div>
-        
-        <CustomModal  setOpen={setOpen}>
-            <ReducerForm func={handleUpdateReducer}/>
-        </CustomModal>
+      <CustomModal setOpen={setOpen}>
+        <ReducerForm
+          func={handleUpdateReducer}
+          name={animal.name}
+          color={animal.color}
+          cost={animal.cost}
+        />
+      </CustomModal>
     </div>
-  )
-}
+  );
+};
 
-export default UpdateReducer
+export default UpdateReducer;

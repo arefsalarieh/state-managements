@@ -1,11 +1,11 @@
 import React from 'react'
 import ReducerForm from '../reducerForm/reducerForm'
+import addReducerFunc from '../../../functions/useReducerFuction/addReducerFunc'
 
 const AddReducer = ({ dispatch }) => {
 
   const handleAddReducer = (values) => {
-    const obj = {id:Math.random() , ...values}
-    dispatch({type:'create' , payload : obj})
+    addReducerFunc(values ,dispatch )
 
   }
 

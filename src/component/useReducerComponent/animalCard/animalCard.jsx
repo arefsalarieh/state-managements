@@ -15,10 +15,15 @@ const AnimalCard = ({item , setOpen  , dispatch}) => {
 
       <div className="flex justify-between mt-6 "></div>
 
-      <div className="my-1 ">
+      <div className="my-1 flex">
+        <h2 className="font-bold text-lg ">color :</h2>
+        <h2 className="font-bold text-lg ">{item.color}</h2>
+      </div>
+
+      <div className="my-1 flex">
         <h2 className="font-bold text-lg ">cost :</h2>
         <h2 className="font-bold text-lg ">{item.cost}</h2>
-      </div>
+      </div>      
 
 
 
