@@ -3,6 +3,7 @@ import Sidebar from '../../component/sideBar/Sidebar';
 import AddReduxValue from '../../component/reduxComponent/addReduxValue/addReduxValue';
 import AddContextValue from '../../component/contextComponent/addContextValue/addContextValue';
 import AddContextReducerValue from '../../component/contextReducerComponent/addContextReducerValue/addContextReducerValue';
+import AddZustandValue from '../../component/zustandComponent/addZustandValue/addZustandValue';
 
 const ChangeValue = () => {
   const [Count, setCount] = useState(1);
@@ -16,7 +17,8 @@ const ChangeValue = () => {
         <div  className='w-[80%] border bg-gray-100'>
             {Count === 1 && <AddReduxValue/>}
             {Count === 2 && <AddContextValue/>}
-            {Count === 4 && <AddContextReducerValue/>}            
+            {Count === 4 && <AddContextReducerValue/>}
+            {Count === 5 && <AddZustandValue/>}                        
         </div>
     </div> 
 </div>

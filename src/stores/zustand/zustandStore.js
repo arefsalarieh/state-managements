@@ -14,7 +14,26 @@ export const useStore = create((set) => ({
       return ({clothes : newArr})
     })
 
-  }
+  },
+
+  addClothes: (value) => {
+    set((state) => {
+      return ({clothes : [...state.clothes , value]})
+    })
+  },
+
+  updateClothes: (value , id) => {
+    set((state) => {
+      const newArr = state.clothes.map(item=>{
+        if (item.id === id) {
+          return { id: id, ...value };
+        } else if (item.id !== id) {
+          return item;
+        }
+      })
+      return ({clothes : newArr})
+    })
+  },  
 
   // updateBears: (newBears) => set({ bears: newBears }),
 }))

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useStore } from "../../../stores/zustand/zustandStore";
 import ClothesCard from "../clothesCard/clothesCard";
+import UpdateZustand from "../updateZustand/updateZustand";
 
 const ZustandValue = () => {
   const [Open, setOpen] = useState(false);
@@ -20,7 +21,6 @@ const ZustandValue = () => {
   };
   return (
     <div className="bg-gray-100   mx-auto border">
-      <button onClick={add}>add</button>
       <h2 className="font-bold text-2xl mt-5 text-center"> Redux Value </h2>
       <h2 className="font-semibold text-xl text-center">user list</h2>
       <p className=" text-center">
@@ -38,7 +38,7 @@ const ZustandValue = () => {
           );
         })}
 
-        {/* {Open !== false && <UpdateRedux id={Open && Open} setOpen={setOpen} />} */}
+        {Open !== false && <UpdateZustand id={Open && Open} setOpen={setOpen} />}
       </div>
     </div>
   );
