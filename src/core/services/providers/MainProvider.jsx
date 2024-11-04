@@ -4,40 +4,15 @@ import store from "../../../stores/redux/store";
 import contextStore from "../../../stores/context/contextData";
 import App from "../../../App";
 import contextArr from "../../../data/contextData/contextArr";
+import laptopArr from "../../../data/reducerContext/laptopArr";
+import reducer from "../../../functions/reducer/reducer";
 
-const initialState = [
-  { id: 1, name: "apple", cost: 1000000 },
-  { id: 2, name: "lenovo", cost: 500000 },
-];
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "delete":
-      const newArr = state.filter((item) => item.id !== action.payload);
-      return newArr;
 
-    case 'create':
-      const createArr = [...state , action.payload]
-      return createArr 
-
-     case 'update':
-      const updateArr = state.map(item=>{
-        if(item.id !== action.payload.id){
-          return item
-        }
-        else{
-          return action.payload
-        }
-      }) 
-      return updateArr
-  }
-};
 
 const MainProvider = () => {
   const [TechList, setTechList] = useState(contextArr);
-
-  
-  const [LaptopList, dispatch] = useReducer(reducer, initialState);
+  const [LaptopList, dispatch] = useReducer(reducer, laptopArr);
 
 
   return (

@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import contextStore from "../../../stores/context/contextData";
 import ContextReducerForm from "../contextReducerForm/contextReducerForm";
+import addContextReducerFunc from "../../../functions/contextReducerFunction/addContextReducerFunc";
 
 const AddContextReducerValue = () => {
     const {LaptopList, dispatch} = useContext(contextStore)
 
-    const addContextReducerFunc = (values) =>{
-        const obj = {id:Math.random() , ...values}
-        dispatch({type:'create' , payload : obj})
+    const handleAddContextReducer = (values) =>{
+      addContextReducerFunc( values , dispatch) 
     }
 
   return (
@@ -18,7 +18,7 @@ const AddContextReducerValue = () => {
         Add Context Value{" "}
       </h2>
 
-      <ContextReducerForm  func={addContextReducerFunc}/>
+      <ContextReducerForm  func={handleAddContextReducer}/>
     </div>
   </div>
   )

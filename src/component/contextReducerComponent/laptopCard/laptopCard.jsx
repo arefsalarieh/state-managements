@@ -1,9 +1,10 @@
 import React from "react";
+import deleteContextReducerFunc from "../../../functions/contextReducerFunction/deleteContextReducerFunc";
 
 const LaptopCard = ({ item, setOpen, dispatch }) => {
 
   const handleDelete = (id) => {
-    dispatch({ type: "delete", payload: id });
+    deleteContextReducerFunc(dispatch , id)
   };
   
   return (

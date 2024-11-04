@@ -3,7 +3,6 @@ import { updateUser } from '../../stores/redux/slices/user';
 
 
 const updateReduxFunc = (values , id ,store , dispatch , setOpen) => {
-    console.log(1);
   const newArr = store.user.map((item) => {
     if (item.id === id) {
       return { id: id, ...values };

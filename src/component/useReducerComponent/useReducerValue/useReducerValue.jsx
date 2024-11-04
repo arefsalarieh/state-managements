@@ -3,12 +3,12 @@ import AnimalCard from "../animalCard/animalCard";
 import AddReducer from '../addReducer/addReducer'
 import UpdateReducer from "../updateReducer/updateReducer";
 import animallArr from "../../../data/useReducerData/animalArr";
-import reducerAnimal from "../../../functions/useReducerFuction/reducerAnimal";
+import reducer from "../../../functions/reducer/reducer";
 
 
 const UseReducerValue = () => {
   const [Open, setOpen] = useState(false);
-  const [List, dispatch] = useReducer(reducerAnimal, animallArr);
+  const [List, dispatch] = useReducer(reducer, animallArr);
 
 
 

@@ -1,4 +1,4 @@
-const reducerAnimal = (state, action) => {
+const reducer = (state, action) => {
     switch (action.type) {
       case "delete":
         const newArr = state.filter((item) => item.id !== action.payload);
@@ -21,4 +21,4 @@ const reducerAnimal = (state, action) => {
     }
   };
 
-  export default reducerAnimal
+  export default reducer

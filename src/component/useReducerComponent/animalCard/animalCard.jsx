@@ -1,9 +1,11 @@
 import React from 'react'
+import deleteReducerFunc from '../../../functions/useReducerFuction/deleteReducerFunc'
 
 const AnimalCard = ({item , setOpen  , dispatch}) => {
 
     const handleDelete = (id)=>{
-        dispatch({type:'delete' , payload : id})
+        deleteReducerFunc(dispatch , id)
+        // dispatch({type:'delete' , payload : id})
     }
   return (
     <div className="shadow-2xl rounded-2xl pb-4 w-[30%] bg-gray-300">
