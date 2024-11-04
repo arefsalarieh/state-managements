@@ -1,3 +1,4 @@
+import deleteContextFunc from "../../../functions/contextFunctions/deleteContextFunc";
 import contextStore from "../../../stores/context/contextData";
 import { useContext } from "react";
 
@@ -5,9 +6,8 @@ const TechnologyCard = ({ item , setOpen}) => {
   const {TechList, setTechList} = useContext(contextStore)
 
 
-  const handleDelete = (id) =>{
-    const newArr = TechList.filter(item=>item.id !== id)
-    setTechList(newArr);
+  const handleDeleteContext = (id) =>{
+    deleteContextFunc(id , TechList , setTechList)
   }
 
   return (
@@ -30,7 +30,7 @@ const TechnologyCard = ({ item , setOpen}) => {
         <div className="flex justify-around">
           <div
             className="badge badge-primary p-4 cursor-pointer "
-            onClick={() => handleDelete(item.id)}
+            onClick={() => handleDeleteContext(item.id)}
           >
             delete
           </div>

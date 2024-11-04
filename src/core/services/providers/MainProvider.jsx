@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import store from "../../../stores/redux/store";
 import contextStore from "../../../stores/context/contextData";
 import App from "../../../App";
+import contextArr from "../../../data/contextData/contextArr";
 
 const initialState = [
   { id: 1, name: "apple", cost: 1000000 },
@@ -33,10 +34,9 @@ const reducer = (state, action) => {
 };
 
 const MainProvider = () => {
-  const [TechList, setTechList] = useState([
-    {id:1 , name:'react' , desc:'a good mini framework'},
-    {id:2 , name:'next' , desc:'a good framework'},
-  ]);
+  const [TechList, setTechList] = useState(contextArr);
+
+  
   const [LaptopList, dispatch] = useReducer(reducer, initialState);
 
 

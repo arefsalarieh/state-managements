@@ -2,13 +2,13 @@ import React from "react";
 import ContextForm from "../contextForm/contextForm";
 import contextStore from "../../../stores/context/contextData";
 import { useContext } from "react";
+import addContextFunc from "../../../functions/contextFunctions/addContextFunc";
 
 const AddContextValue = () => {
   const { TechList, setTechList } = useContext(contextStore);
 
-  const addContext = (values) => {
-    const newObj = { id: Math.random(), ...values };
-    setTechList([...TechList, newObj]);
+  const handleContextAdd = (values) => {
+    addContextFunc(values , TechList, setTechList )
   };
 
   return (
@@ -19,7 +19,7 @@ const AddContextValue = () => {
           Add Context Value{" "}
         </h2>
 
-        <ContextForm func={addContext} />
+        <ContextForm func={handleContextAdd} />
       </div>
     </div>
   );
