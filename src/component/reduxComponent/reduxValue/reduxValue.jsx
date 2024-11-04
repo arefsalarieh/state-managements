@@ -3,6 +3,7 @@ import { deleteUser } from "../../../stores/redux/slices/user";
 import { useState } from "react";
 import UserCard from "../userCard/userCard";
 import UpdateRedux from "../updateRedux/updateRedux";
+import deleteReduxFunc from "../../../functions/reduxFunctions/deleteReduxFunc";
 
 const ReduxValue = () => {
   const [Open, setOpen] = useState(false);
@@ -10,7 +11,7 @@ const ReduxValue = () => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    dispatch(deleteUser(id));
+    deleteReduxFunc(dispatch , id)
   };
   return (
     <div className="bg-gray-100   mx-auto border">

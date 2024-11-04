@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../../../stores/redux/slices/user";
 import CustomForm from "../customForm/customForm";
+import addReduxFunc from "../../../functions/reduxFunctions/addReduxFunc";
 
 const AddReduxValue = () => {
   const store = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const handleRedux = (values) => {
-    const id = Math.random();
-    dispatch(addUser({ ...values, id }));
+  const handleAddRedux = (values) => {
+    addReduxFunc(values , dispatch)
   };
 
   return (
@@ -19,7 +19,7 @@ const AddReduxValue = () => {
           Add Redux Value
         </h2>
 
-        <CustomForm habdleSubmit={handleRedux} />
+        <CustomForm habdleSubmit={handleAddRedux} />
       </div>
     </div>
   );
