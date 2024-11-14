@@ -30,7 +30,16 @@ const userSlice = createSlice({
     },
 
     updateUser: (state, action) => {
-      state.splice(0, state.length, ...action.payload);
+      console.log(action.payload);
+      const newArr = state.map((item) => {
+        if (item.id === action.payload.id) {
+          return action.payload
+        } else  {
+          return item;
+        }
+      });
+      
+      state.splice(0, state.length, ...newArr);
     },
   },
 });
