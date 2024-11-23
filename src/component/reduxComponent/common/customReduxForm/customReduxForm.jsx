@@ -10,11 +10,11 @@ const CustomReduxForm = ({habdleSubmit , id , name , email , phoneNumber , text}
           className="border-2 "
           onSubmit={habdleSubmit}
         >
-          <Form className="flex flex-col gap-10">
-            <h2 className="font-semibold text-lg  text-center">
+          <Form className="flex flex-col gap-10 ">
+
+            <h2 className="font-semibold text-lg w-52 mx-auto  text-center">
               {text}
             </h2>
-
             <div>
               <Field  className='input input-bordered' type="text" name="name" placeholder="name" />
             </div>

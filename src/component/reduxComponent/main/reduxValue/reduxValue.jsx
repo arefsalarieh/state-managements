@@ -7,7 +7,6 @@ import ReduxWithApiValue from "../../reduxWithApi/reduxWithApiValue/reduxWithApi
 import SimpleReduxValue from "../../simpleRedux/simpleReduxValue/simpleReduxValue";
 
 const ReduxValue = () => {
-  const [Open, setOpen] = useState(false);
   const [Count, setCount] = useState(2);
 
   return (

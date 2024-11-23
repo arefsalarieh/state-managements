@@ -26,3 +26,28 @@ export const deleteUserWithApi = createAsyncThunk('usersList/delete' , async (va
 
   }
 })
+
+export const addUserWithApi = createAsyncThunk("usersList/addUser", async (values) => {
+  try {
+    const res = await axios.post(
+      `https://671d123d09103098807c2afb.mockapi.io/arefsalarieh/users` , values
+    );
+    return res;
+  } catch (err) {
+    
+    throw err
+  }
+});
+
+
+export const updateUserWithApi = createAsyncThunk("usersList/updateUser", async (values) => {
+  try {
+    const res = await axios.put(
+      `https://671d123d09103098807c2afb.mockapi.io/arefsalarieh/users/${values.id}` , values
+    );
+    return res;
+  } catch (err) {
+    
+    throw err
+  }
+});

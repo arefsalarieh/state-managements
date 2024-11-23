@@ -12,13 +12,7 @@ const AddSimpleRedux = () => {
   };
 
   return (
-    <div className=" mx-auto  ">
-      <div className=" mt-10 p-6">
-        <h2 className="font-bold text-2xl mt-5 text-center">Add Redux Value</h2>
-
         <CustomReduxForm habdleSubmit={handleAddRedux} text="Add a new user" />
-      </div>
-    </div>
   );
 };
 

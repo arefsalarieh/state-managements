@@ -1,20 +1,21 @@
-import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../../../../stores/redux/slices/user";
-import CustomReduxForm from "../../common/customReduxForm/customReduxForm";
+
 import AddSimpleRedux from "../../simpleRedux/addSimpleRedux/addSimpleRedux";
+import { useState } from "react";
+import ReduxHeader from "../../common/reduxHeader/reduxHeader";
+import AddReduxWithApi from "../../reduxWithApi/addReduxWithApi/addReduxWithApi";
 
 const AddReduxValue = () => {
-  const store = useSelector((state) => state);
-  const dispatch = useDispatch();
+  const [Count, setCount] = useState(1);
 
-  const handleAddRedux = (values) => {
-    const id = Math.random();
-    dispatch(addUser({ ...values, id }));
-  };
 
   return (
     <div className=" mx-auto  ">
-        <AddSimpleRedux/>
+      <div className=" mt-10 p-6">
+        <h2 className="font-bold text-2xl mt-5 text-center">Add Redux Value</h2>
+        <ReduxHeader Count={Count} setCount={setCount}   />
+        {Count ===1 && <AddSimpleRedux/>}
+        {Count ===2 && <AddReduxWithApi/>}
+      </div>
     </div>
   );
 };
