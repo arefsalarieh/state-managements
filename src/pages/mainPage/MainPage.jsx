@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import AddReduxValue from '../../component/reduxComponent/addReduxValue/addReduxValue'
-import ReduxValue from '../../component/reduxComponent/reduxValue/reduxValue'
+import ReduxValue from '../../component/reduxComponent/main/reduxValue/reduxValue' 
 import Sidebar from '../../component/sideBar/Sidebar'
 import ContextValue from '../../component/contextComponent/contextValue/contextValue'
 import UseReducerValue from '../../component/useReducerComponent/useReducerValue/useReducerValue'
