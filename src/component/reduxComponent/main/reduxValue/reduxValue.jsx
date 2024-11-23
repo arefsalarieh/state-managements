@@ -7,7 +7,7 @@ import ReduxWithApiValue from "../../reduxWithApi/reduxWithApiValue/reduxWithApi
 import SimpleReduxValue from "../../simpleRedux/simpleReduxValue/simpleReduxValue";
 
 const ReduxValue = () => {
-  const [Count, setCount] = useState(2);
+  const [Count, setCount] = useState(1);
 
   return (
     <div className="bg-gray-100   mx-auto border">

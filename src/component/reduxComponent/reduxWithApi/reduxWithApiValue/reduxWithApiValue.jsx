@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteUserWithApi, getUser } from '../../../../stores/redux/userApiSlice/userAction';
+import { deleteUserWithApi, getUser, realDeleteUser } from '../../../../stores/redux/userApiSlice/userAction';
 import UserCard from '../../common/userCard/userCard';
 import UpdateReduxWithApi from '../updateReduxWithApi/updateReduxWithApi';
 
@@ -22,6 +22,10 @@ const ReduxWithApiValue = () => {
         const newUser = {...delUser}
         newUser.active = !newUser.active
         dispatch(deleteUserWithApi(newUser))
+
+
+        //real delete
+        // dispatch(realDeleteUser(id))
     }
 
   return (

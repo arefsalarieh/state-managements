@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addUserWithApi, deleteUserWithApi, getUser, updateUserWithApi } from "./userAction";
+import { addUserWithApi, deleteUserWithApi, getUser, realDeleteUser, updateUserWithApi } from "./userAction";
 
 
 const initState = {
@@ -35,9 +35,18 @@ const userApiSlice = createSlice({
 
         })
 
+        builder.addCase(realDeleteUser.fulfilled , (state , action)=>{
+            if(action.payload.statusText === 'OK'){
+                // console.log('deleteBooks' , action.payload.data.id);
+                const newArr = state.usersList.filter(item=>item.id !== action.payload.data.id)
+                state.usersList = newArr
+
+            }
+
+        })
+
         builder.addCase(addUserWithApi.fulfilled , (state , action)=>{
             if(action.payload.statusText === 'Created'){
-                console.log('updateBooks' , action.payload.data);
                 const newArr = [...state.usersList , action.payload.data]
                 state.usersList = newArr
 
@@ -47,7 +56,6 @@ const userApiSlice = createSlice({
 
         builder.addCase(updateUserWithApi.fulfilled , (state , action)=>{
             if(action.payload.statusText === 'OK'){
-                console.log('deleteBooks' , action.payload.data);
                 const newArr = state.usersList.map(item=>{
                     if(item.id === action.payload.data.id){
                         return action.payload.data

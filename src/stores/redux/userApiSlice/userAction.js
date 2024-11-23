@@ -27,6 +27,19 @@ export const deleteUserWithApi = createAsyncThunk('usersList/delete' , async (va
   }
 })
 
+// real delete
+export const realDeleteUser = createAsyncThunk("usersList/realDelete", async (id) => {
+  try {
+    const res = await axios.delete(
+      `https://671d123d09103098807c2afb.mockapi.io/arefsalarieh/users/${id}`
+    );
+    return res;
+  } catch (err) {
+    
+    throw err
+  }
+});
+
 export const addUserWithApi = createAsyncThunk("usersList/addUser", async (values) => {
   try {
     const res = await axios.post(
