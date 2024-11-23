@@ -20,7 +20,7 @@ const ReduxWithApiValue = () => {
         // actualy we dont delete user because i use these users in another project too , i donst delete them just change the activity mode
         const delUser = userApi.usersList.find(item => item.id === id)
         const newUser = {...delUser}
-        newUser.active = !newUser.active
+        newUser.deleted = !newUser.deleted
         dispatch(deleteUserWithApi(newUser))
 
 
@@ -33,7 +33,7 @@ const ReduxWithApiValue = () => {
         {userApi.usersList.map(item=>{
             return(
                 <>
-                {item.active && <UserCard name={item.name} email={item.email} phoneNumber={item.phoneNumber} id={item.id} setOpen={setOpen} handleDelete={handleDelete} />}
+                {!item.deleted && <UserCard name={item.name} email={item.email} phoneNumber={item.phoneNumber} id={item.id} setOpen={setOpen} handleDelete={handleDelete} />}
                 {/* <UserCard name={item.name} email={item.email} phoneNumber={item.phoneNumber} id={item.id} setOpen={setOpen} handleDelete={handleDelete} /> */}
                 </>
 
